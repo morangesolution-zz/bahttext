@@ -1,9 +1,13 @@
 
-## bahttext util
-convert currency number to Thai text number
+## Bahttext
+Tool to convert currency number to Thai text number
 
+## Installation
+```
+pip install bahttext
+```
 
-## usage
+## Usage
 
 ```
 >>> from bahttext import bahttext
