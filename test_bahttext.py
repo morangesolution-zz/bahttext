@@ -79,5 +79,11 @@ class TestBahtText(unittest.TestCase):
         self.assertEqual(
             bahttext(10000000680000.51), u'สิบล้านล้านหกแสนแปดหมื่นบาทห้าสิบเอ็ดสตางค์')
 
+    def test_negative_minus_prefix_number_should_print_loob(self):
+        self.assertEqual(bahttext(-1.10), u'ลบหนึ่งบาทสิบสตางค์')
+        self.assertEqual(bahttext(-1000.0), u'ลบหนึ่งพันบาทถ้วน')
+        self.assertEqual(
+            bahttext(-258065.81), u'ลบสองแสนห้าหมื่นแปดพันหกสิบห้าบาทแปดสิบเอ็ดสตางค์')
+
 if __name__ == '__main__':
     unittest.main()

@@ -67,6 +67,10 @@ def bahttext(input_float):
 
     baht_string = u''
 
+    if input_float < 0:
+        input_float *= -1
+        baht_string += u'ลบ'
+
     float_string = '%0.2f' % input_float
     input_string = str(float_string).split('.')
 
