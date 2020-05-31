@@ -50,21 +50,21 @@ class TestBahtText(unittest.TestCase):
         self.assertEqual(bahttext(200.0), 'สองร้อยบาทถ้วน')
         self.assertEqual(bahttext(201.0), 'สองร้อยเอ็ดบาทถ้วน')
 
-    def test_number_thoundsand_should_show_pan(self):
+    def test_number_thousand_should_show_pan(self):
         self.assertEqual(bahttext(1000.0), 'หนึ่งพันบาทถ้วน')
         self.assertEqual(bahttext(2000.10), 'สองพันบาทสิบสตางค์')
         self.assertEqual(
             bahttext(3211.51), 'สามพันสองร้อยสิบเอ็ดบาทห้าสิบเอ็ดสตางค์')
         self.assertEqual(bahttext(8000.31), 'แปดพันบาทสามสิบเอ็ดสตางค์')
 
-    def test_number_ten_thoundsand_should_show_muern(self):
+    def test_number_ten_thousand_should_show_muern(self):
         self.assertEqual(bahttext(30000.0), 'สามหมื่นบาทถ้วน')
         self.assertEqual(
             bahttext(98765.10), 'เก้าหมื่นแปดพันเจ็ดร้อยหกสิบห้าบาทสิบสตางค์')
         self.assertEqual(
             bahttext(30211.21), 'สามหมื่นสองร้อยสิบเอ็ดบาทยี่สิบเอ็ดสตางค์')
 
-    def test_number_hundred_thoundsand_should_show_saan(self):
+    def test_number_hundred_thousand_should_show_saan(self):
         self.assertEqual(bahttext(800000.0), 'แปดแสนบาทถ้วน')
         self.assertEqual(
             bahttext(258065.81), 'สองแสนห้าหมื่นแปดพันหกสิบห้าบาทแปดสิบเอ็ดสตางค์')
