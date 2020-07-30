@@ -4,9 +4,12 @@
 # All rights reserved. check LICENSE for more detail.
 # Seksan Poltree <seksan@morange.co.th>, 2014.
 
-thainum = [u"ศูนย์", u"หนึ่ง", u"สอง", u"สาม",
-           u"สี่", u"ห้า", u"หก", u"เจ็ด", u"แปด", u"เก้า"]
-thaimulti = [u"", u"สิบ", u"ร้อย", u"พัน", u"หมื่น", u"แสน", u"ล้าน"]
+from __future__ import unicode_literals
+# from builtins import str
+
+thainum = ['ศูนย์', 'หนึ่ง', 'สอง', 'สาม',
+           'สี่', 'ห้า', 'หก', 'เจ็ด', 'แปด', 'เก้า']
+thaimulti = ['', 'สิบ', 'ร้อย', 'พัน', 'หมื่น', 'แสน', 'ล้าน']
 
 
 def split_million_sequence(seq):
@@ -19,22 +22,22 @@ def split_million_sequence(seq):
 
 def convert_special_twodigit(int_string):
 
-    baht_string = u''
+    baht_string = ''
 
     if int_string[0] == '1':
         pass
     elif int_string[0] == '2':
-        baht_string += u"ยี่"
+        baht_string += 'ยี่'
     elif int_string[0] in "3456789":
         baht_string += thainum[int(int_string[0])]
 
     if int_string[0] != '0':
-        baht_string += u'สิบ'
+        baht_string += 'สิบ'
 
     if int_string[1] == '0':
         pass
     elif int_string[1] == '1':
-        baht_string += u'เอ็ด'
+        baht_string += 'เอ็ด'
     else:
         baht_string += thainum[int(int_string[1])]
 
@@ -43,7 +46,7 @@ def convert_special_twodigit(int_string):
 
 def convert_multiple_million(int_string, is_million=False):
 
-    baht_string = u''
+    baht_string = ''
 
     # integer number part
     if len(int_string) == 1:
@@ -65,11 +68,11 @@ def convert_multiple_million(int_string, is_million=False):
 
 def bahttext(input_float):
 
-    baht_string = u''
+    baht_string = ''
 
     if input_float < 0:
         input_float *= -1
-        baht_string += u'ลบ'
+        baht_string += 'ลบ'
 
     float_string = '%0.2f' % input_float
     input_string = str(float_string).split('.')
@@ -91,14 +94,14 @@ def bahttext(input_float):
             million_group_string, is_million)
 
         if million_index > 0:
-            baht_string += u'ล้าน'
+            baht_string += 'ล้าน'
             million_index -= 1
 
-    baht_string += u'บาท'
+    baht_string += 'บาท'
 
     # decimal number part
     if int(decimal_string) == 0:
-        baht_string += u'ถ้วน'
+        baht_string += 'ถ้วน'
 
     else:
         if len(decimal_string) == 1:
@@ -107,6 +110,6 @@ def bahttext(input_float):
         elif len(decimal_string) == 2:
             baht_string += convert_special_twodigit(decimal_string)
 
-        baht_string += u'สตางค์'
+        baht_string += 'สตางค์'
 
     return baht_string
