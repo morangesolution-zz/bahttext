@@ -1,5 +1,13 @@
+import pytest
 from py3bahttext import bahttext
 
+
+def test_input_is_a_number_then_can_convert_to_string():
+    assert(type(bahttext(1.0)) == str)
+
+def test_input_is_not_number_then_raise_error():
+    with pytest.raises(TypeError):
+        bahttext('text input')
 
 def test_input_integer_one_digit_can_convert():
     assert(bahttext(0.0) == 'ศูนย์บาทถ้วน')
