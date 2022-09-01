@@ -1,15 +1,13 @@
-#!/usr/bin/env python
-
 from distutils.core import setup
 
-setup(name='bahttext',
+setup(name='py3bahttext',
       version='1.0',
       description='Tool for convert currency number to Thai text',
-      author='Seksan Poltree',
-      author_email='seksan@morange.co.th',
-      url='https://github.com/morangesolution/bahttext',
-      download_url='https://github.com/morangesolution/bahttext/tarball/master',
-      packages=['bahttext'],
+      author='Deeprom S',
+      author_email='grooveeeeee@gmail.com',
+      url='https://github.com/tstxni97/py3bahttext',
+      download_url='https://github.com/tstxni97/py3bahttext/tarball/master',
+      packages=['py3bahttext'],
       license="BSD",
-     )
+)
 
